@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">NameList</string>
+    <string name="firstName">First Name</string>
+    <string name="firstN">First name:</string>
+    <string name="lastN">Last name:</string>
+    <string name="clr">clear</string>
+    <string name="add">add</string>
+</resources>

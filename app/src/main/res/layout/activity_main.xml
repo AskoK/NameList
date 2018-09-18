@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:paddingTop="20dp"
+    android:paddingRight="20dp"
+    android:paddingLeft="20dp"
+    tools:context=".MainActivity">
+
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TableRow
+            android:layout_height="match_parent"
+            android:layout_width="match_parent">
+
+            <TextView
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:layout_marginEnd="10dp"
+                android:text="@string/firstN"
+                android:textSize="18sp"
+                android:textColor="@color/black"/>
+
+            <EditText
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:id="@+id/txt_firstN"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:layout_marginLeft="30dp"/>
+        </TableRow>
+
+        <TableRow
+            android:layout_height="match_parent"
+            android:layout_width="match_parent">
+
+            <TextView
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:layout_marginEnd="10dp"
+                android:text="@string/lastN"
+                android:textSize="18sp"
+                android:textColor="@color/black"/>
+
+            <EditText
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:id="@+id/txt_lastN"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:layout_marginLeft="30dp"/>
+        </TableRow>
+
+        <TableRow
+            android:layout_height="match_parent"
+            android:layout_width="wrap_content"
+            android:layout_gravity="center_horizontal">
+
+            <Button
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:textColor="@color/textRed"
+                android:background="@color/trans"
+                android:id="@+id/btn_clr"
+                android:layout_marginTop="10dp"
+                android:text="@string/clr"
+                android:onClick="clear"
+                android:layout_weight="1"/>
+
+            <Button
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:textColor="@color/textRed"
+                android:background="@color/trans"
+                android:id="@+id/btn_add"
+                android:layout_marginTop="10dp"
+                android:text="@string/add"
+                android:onClick="add"
+                android:layout_weight="1"/>
+        </TableRow>
+    </TableLayout>
+
+    <ListView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/listView"
+        android:layout_marginTop="20dp"
+        android:dividerHeight="15.0sp"
+        android:divider="@android:color/transparent">
+
+    </ListView>
+
+
+</LinearLayout>
