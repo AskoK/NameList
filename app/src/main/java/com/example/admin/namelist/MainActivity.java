@@ -1,5 +1,6 @@
 package com.example.admin.namelist;
 
+import android.content.DialogInterface;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -54,11 +55,26 @@ public class MainActivity extends AppCompatActivity {
         listView.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
             @Override
             public boolean onItemLongClick(AdapterView<?> arg0, View arg1,
-                                           int pos, long id) {
+                                           final int pos, long id) {
 
-                Log.v("long clicked","pos: " + pos);
-                arrayList.remove(pos);
-                adapter.notifyDataSetChanged();
+                AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
+                // Add the buttons
+                builder.setTitle("DELETE");
+                builder.setNegativeButton("CANCEL", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                        // User cancelled the dialog
+                    }
+                });
+                builder.setPositiveButton("YES", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                        // User clicked YES button
+                        arrayList.remove(pos);
+                        adapter.notifyDataSetChanged();
+                    }
+                });
+                // Create the AlertDialog
+                AlertDialog dialog = builder.create();
+                dialog.show();
 
                 return true;
             }
