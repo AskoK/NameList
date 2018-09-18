@@ -3,6 +3,7 @@ package com.example.admin.namelist;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -21,7 +22,6 @@ public class MainActivity extends AppCompatActivity {
     private Button clr;
     private ArrayAdapter<String> adapter;
     private ArrayList<String> arrayList;
-
 
 
     @Override
@@ -51,18 +51,19 @@ public class MainActivity extends AppCompatActivity {
 
         });
 
-        listView.setOnLongClickListener(new View.OnLongClickListener() {
+        listView.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
             @Override
-            public boolean onLongClick(View v) {
+            public boolean onItemLongClick(AdapterView<?> arg0, View arg1,
+                                           int pos, long id) {
 
+                Log.v("long clicked","pos: " + pos);
+                arrayList.remove(pos);
+                adapter.notifyDataSetChanged();
 
-                return false;
+                return true;
             }
         });
-
     }
-
-
 
     public void clear(View view) {
         firstName.setText("");
