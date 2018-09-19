@@ -58,23 +58,25 @@
 
         <TableRow
             android:layout_height="match_parent"
-            android:layout_width="wrap_content"
-            android:layout_gravity="center_horizontal">
+            android:layout_width="wrap_content">
 
             <Button
                 android:layout_height="wrap_content"
                 android:layout_width="wrap_content"
+                android:layout_gravity="center_horizontal"
                 android:textColor="@color/textRed"
                 android:background="@color/trans"
                 android:id="@+id/btn_clr"
                 android:layout_marginTop="10dp"
                 android:text="@string/clr"
                 android:onClick="clear"
-                android:layout_weight="1"/>
+                android:layout_weight="1"
+                android:layout_marginStart="50dp"/>
 
             <Button
                 android:layout_height="wrap_content"
                 android:layout_width="wrap_content"
+                android:layout_gravity="center_horizontal"
                 android:textColor="@color/textRed"
                 android:background="@color/trans"
                 android:id="@+id/btn_add"
